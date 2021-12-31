@@ -1,0 +1,14 @@
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\bin\Debug\FinalProject_quanlykho.exe.config
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\bin\Debug\FinalProject_quanlykho.exe
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\bin\Debug\FinalProject_quanlykho.pdb
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.csproj.AssemblyReference.cache
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.frmLogin.resources
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.frmMain.resources
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.Properties.Resources.resources
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.csproj.GenerateResource.cache
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.csproj.CoreCompileInputs.cache
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.exe
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.pdb
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.frmPhieuNhap.resources
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.frmPhieuXuat.resources
+D:\CNPM\finakl\final\FinalProject_quanlykho\FinalProject_quanlykho\obj\Debug\FinalProject_quanlykho.frmSanPham.resources
