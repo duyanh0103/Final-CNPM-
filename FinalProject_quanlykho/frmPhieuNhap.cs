@@ -87,34 +87,70 @@ namespace FinalProject_quanlykho
         {
             if (addReceipt == true)
             {
-                conn.Open();
-                var command = new SqlCommand("Insert into INPUTKHO(NAMEINPUT) values(N'" + txtTenPhieu.Text + "') ", conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-                frmPhieuNhap_Load(sender, e);
+                try
+                {
+                    conn.Open();
+                    var command = new SqlCommand("Insert into INPUTKHO(NAMEINPUT) values(N'" + txtTenPhieu.Text + "') ", conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    frmPhieuNhap_Load(sender, e);
+                    MessageBox.Show("Insert Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Insert Error", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+
                 addReceipt = false;
 
             }
             else
             {
-                conn.Open();
-                var command = new SqlCommand("update INPUTKHO set NAMEINPUT = N'" 
-                    + txtTenPhieu.Text + "'where id_input =  "+Convert.ToString(cbPhieuNhap.SelectedValue)+" ", conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-                frmPhieuNhap_Load(sender, e);
+                try
+                {
+                    conn.Open();
+                    var command = new SqlCommand("update INPUTKHO set NAMEINPUT = N'"
+                        + txtTenPhieu.Text + "'where id_input =  " + Convert.ToString(cbPhieuNhap.SelectedValue) + " ", conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    frmPhieuNhap_Load(sender, e);
+                    MessageBox.Show("Update Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Update Error", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+
                 
             }
         }
 
         private void btnDeleteReceipt_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            var command = new SqlCommand("delete from INPUTKHO where id_input =  " + Convert.ToString(cbPhieuNhap.SelectedValue) + " ", conn);
-            command.ExecuteNonQuery();
-            conn.Close();
-            frmPhieuNhap_Load(sender, e);
-            
+            DialogResult lenh = MessageBox.Show("Do you sure about deleting the Receipt " + cbPhieuNhap.Text + "?", 
+                "Notificaiton", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (lenh == DialogResult.Yes)
+            {
+                try
+                {
+                    conn.Open();
+                    var command = new SqlCommand("delete from INPUTKHO where id_input =  " + Convert.ToString(cbPhieuNhap.SelectedValue) + " ", conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    frmPhieuNhap_Load(sender, e);
+                    MessageBox.Show("Delete Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Delete Error", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+
+
+            }
+
         }
         Boolean addGoods = false;
         private void btnThemHang_Click(object sender, EventArgs e)
@@ -135,23 +171,43 @@ namespace FinalProject_quanlykho
         {
             if (addGoods == true)
             {
-                conn.Open();
-                var command = new SqlCommand("Insert into INPUTINFO(IDSANPHAM,TENSANPHAM,SOLUONG,DATE_INPUT,GIANHAP,GIABAN,ID_INPUT) " +
-                    "values(N'" + txtID_Product.Text + "',N'" + txtNameProduct.Text + "','" + nudCount.Value + "','"+importDatePicker.CustomFormat+ "','"+txtGiaNhap.Text+ "','"+txtGiaBan.Text+ "','"+Convert.ToInt32(cbPhieuNhap.SelectedValue)+ "') ", conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-                frmPhieuNhap_Load(sender, e);
-                addGoods = false;
+                try
+                {
+                    conn.Open();
+                    var command = new SqlCommand("Insert into INPUTINFO(IDSANPHAM,TENSANPHAM,SOLUONG,DATE_INPUT,GIANHAP,GIABAN,ID_INPUT) " +
+                        "values(N'" + txtID_Product.Text + "',N'" + txtNameProduct.Text + "','" + nudCount.Value + "','" + importDatePicker.CustomFormat + "','" + txtGiaNhap.Text + "','" + txtGiaBan.Text + "','" + Convert.ToInt32(cbPhieuNhap.SelectedValue) + "') ", conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    frmPhieuNhap_Load(sender, e);
+                    addGoods = false;
+                    MessageBox.Show("Add Product Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Add Product Error", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+
                 
             }
             else
             {
-                conn.Open();
-                var command = new SqlCommand("update INPUTINFO set " +
-                    "IDSANPHAM = N'"+ txtID_Product.Text + "',TENSANPHAM=N'" + txtNameProduct.Text+ "',SOLUONG='" +nudCount.Value+ "',DATE_INPUT='"+importDatePicker.CustomFormat+"',GIANHAP='"+txtGiaNhap.Text+"',GIABAN='"+txtGiaBan.Text+"' where id_input =  " + Convert.ToString(txtMaDonHang.Text) + " ", conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-                frmPhieuNhap_Load(sender, e);
+                try
+                {
+                    conn.Open();
+                    var command = new SqlCommand("update INPUTINFO set " +
+                        "IDSANPHAM = N'" + txtID_Product.Text + "',TENSANPHAM=N'" + txtNameProduct.Text + "',SOLUONG='" + nudCount.Value + "',DATE_INPUT='" + importDatePicker.CustomFormat + "',GIANHAP='" + txtGiaNhap.Text + "',GIABAN='" + txtGiaBan.Text + "' where id_input =  " + Convert.ToString(txtMaDonHang.Text) + " ", conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    frmPhieuNhap_Load(sender, e);
+                    MessageBox.Show("Update Product Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Update Product Error", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+
               
             }
 
@@ -159,11 +215,27 @@ namespace FinalProject_quanlykho
 
         private void btnXoaHang_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            var command = new SqlCommand("delete from INPUTINFO where ID_INPUTINFO =  " + Convert.ToInt32(txtMaDonHang.Text) + " ", conn);
-            command.ExecuteNonQuery();
-            conn.Close();
-            frmPhieuNhap_Load(sender, e);
+            DialogResult lenhXoaGoods = MessageBox.Show("Do you sure to delete this " + txtNameProduct.Text + "?",
+                "Notiification",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (lenhXoaGoods == DialogResult.Yes)
+            {
+                try
+                {
+                    conn.Open();
+                    var command = new SqlCommand("delete from INPUTINFO where ID_INPUTINFO =  " + Convert.ToInt32(txtMaDonHang.Text) + " ", conn);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    frmPhieuNhap_Load(sender, e);
+                    MessageBox.Show("Delete Product Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Delete Product Error", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+            }
+
 
         }
     }

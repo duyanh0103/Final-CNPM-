@@ -30,5 +30,11 @@ namespace FinalProject_quanlykho
             frmPhieuXuat phieuXuat = new frmPhieuXuat();
             phieuXuat.Show();
         }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            frmSanPham sanpham = new frmSanPham();
+            sanpham.Show();
+        }
     }
 }

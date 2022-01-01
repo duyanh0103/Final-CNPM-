@@ -92,6 +92,7 @@ namespace FinalProject_quanlykho
             this.btnProduct.TabIndex = 4;
             this.btnProduct.Text = "Sản Phẩm";
             this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // btnRpMonthly
             // 

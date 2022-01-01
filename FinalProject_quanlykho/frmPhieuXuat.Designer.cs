@@ -59,10 +59,14 @@ namespace FinalProject_quanlykho
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -78,7 +82,7 @@ namespace FinalProject_quanlykho
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Location = new System.Drawing.Point(868, 111);
+            this.groupBox2.Location = new System.Drawing.Point(880, 74);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(288, 285);
             this.groupBox2.TabIndex = 12;
@@ -194,16 +198,16 @@ namespace FinalProject_quanlykho
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtID_Product);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(556, 108);
+            this.groupBox1.Location = new System.Drawing.Point(568, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(306, 288);
+            this.groupBox1.Size = new System.Drawing.Size(306, 267);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(225, 245);
+            this.btnSua.Location = new System.Drawing.Point(225, 224);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 23;
@@ -212,7 +216,7 @@ namespace FinalProject_quanlykho
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(116, 245);
+            this.btnXoa.Location = new System.Drawing.Point(116, 224);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 22;
@@ -221,7 +225,7 @@ namespace FinalProject_quanlykho
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(6, 245);
+            this.btnThem.Location = new System.Drawing.Point(6, 224);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 21;
@@ -230,7 +234,7 @@ namespace FinalProject_quanlykho
             // 
             // nudCount
             // 
-            this.nudCount.Location = new System.Drawing.Point(116, 117);
+            this.nudCount.Location = new System.Drawing.Point(116, 107);
             this.nudCount.Minimum = new decimal(new int[] {
             100,
             0,
@@ -247,14 +251,14 @@ namespace FinalProject_quanlykho
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(116, 195);
+            this.textBox5.Location = new System.Drawing.Point(116, 176);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(117, 22);
             this.textBox5.TabIndex = 17;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(116, 154);
+            this.textBox4.Location = new System.Drawing.Point(116, 141);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(117, 22);
             this.textBox4.TabIndex = 16;
@@ -262,7 +266,7 @@ namespace FinalProject_quanlykho
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 195);
+            this.label11.Location = new System.Drawing.Point(7, 176);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 17);
             this.label11.TabIndex = 15;
@@ -279,7 +283,7 @@ namespace FinalProject_quanlykho
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 157);
+            this.label9.Location = new System.Drawing.Point(6, 141);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 17);
             this.label9.TabIndex = 13;
@@ -288,7 +292,7 @@ namespace FinalProject_quanlykho
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 117);
+            this.label7.Location = new System.Drawing.Point(7, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 17);
             this.label7.TabIndex = 10;
@@ -297,7 +301,7 @@ namespace FinalProject_quanlykho
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 78);
+            this.label5.Location = new System.Drawing.Point(6, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 17);
             this.label5.TabIndex = 6;
@@ -305,7 +309,7 @@ namespace FinalProject_quanlykho
             // 
             // txtNameProduct
             // 
-            this.txtNameProduct.Location = new System.Drawing.Point(116, 75);
+            this.txtNameProduct.Location = new System.Drawing.Point(116, 70);
             this.txtNameProduct.Name = "txtNameProduct";
             this.txtNameProduct.Size = new System.Drawing.Size(171, 22);
             this.txtNameProduct.TabIndex = 5;
@@ -320,7 +324,7 @@ namespace FinalProject_quanlykho
             // 
             // txtID_Product
             // 
-            this.txtID_Product.Location = new System.Drawing.Point(116, 38);
+            this.txtID_Product.Location = new System.Drawing.Point(116, 29);
             this.txtID_Product.Name = "txtID_Product";
             this.txtID_Product.Size = new System.Drawing.Size(171, 22);
             this.txtID_Product.TabIndex = 3;
@@ -328,7 +332,7 @@ namespace FinalProject_quanlykho
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 38);
+            this.label3.Location = new System.Drawing.Point(7, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 17);
             this.label3.TabIndex = 2;
@@ -337,29 +341,65 @@ namespace FinalProject_quanlykho
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(118, 108);
+            this.dataGridView1.Location = new System.Drawing.Point(568, 416);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(419, 316);
+            this.dataGridView1.Size = new System.Drawing.Size(600, 265);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(460, 26);
+            this.label1.Location = new System.Drawing.Point(296, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 51);
+            this.label1.Size = new System.Drawing.Size(653, 61);
             this.label1.TabIndex = 9;
-            this.label1.Text = "PHIẾU NHẬP";
+            this.label1.Text = "GOODS DELIVERY NOTE";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 132);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(550, 549);
+            this.dataGridView2.TabIndex = 13;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label13.Location = new System.Drawing.Point(180, 96);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(174, 33);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "PRODUCTS";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label14.Location = new System.Drawing.Point(787, 380);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(139, 33);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "RECEIPT";
             // 
             // frmPhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 450);
+            this.ClientSize = new System.Drawing.Size(1190, 719);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -372,6 +412,7 @@ namespace FinalProject_quanlykho
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +450,8 @@ namespace FinalProject_quanlykho
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
