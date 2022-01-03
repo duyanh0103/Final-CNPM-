@@ -43,6 +43,11 @@ namespace FinalProject_quanlykho
             this.dgvReceipt = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvAgents = new System.Windows.Forms.DataGridView();
+            this.ID_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENDAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHONE_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
@@ -54,11 +59,6 @@ namespace FinalProject_quanlykho
             this.GIABAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENDAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PHONE_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceipt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgents)).BeginInit();
@@ -212,6 +212,46 @@ namespace FinalProject_quanlykho
             this.dgvAgents.TabIndex = 13;
             this.dgvAgents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellClickAgents);
             // 
+            // ID_DAILY
+            // 
+            this.ID_DAILY.DataPropertyName = "ID_DAILY";
+            this.ID_DAILY.HeaderText = "Mã Đại Lý";
+            this.ID_DAILY.MinimumWidth = 6;
+            this.ID_DAILY.Name = "ID_DAILY";
+            this.ID_DAILY.Width = 125;
+            // 
+            // TENDAILY
+            // 
+            this.TENDAILY.DataPropertyName = "TENDAILY";
+            this.TENDAILY.HeaderText = "Tên Đại Lý";
+            this.TENDAILY.MinimumWidth = 6;
+            this.TENDAILY.Name = "TENDAILY";
+            this.TENDAILY.Width = 125;
+            // 
+            // DIACHI_DAILY
+            // 
+            this.DIACHI_DAILY.DataPropertyName = "DIACHI_DAILY";
+            this.DIACHI_DAILY.HeaderText = "Địa Chỉ";
+            this.DIACHI_DAILY.MinimumWidth = 6;
+            this.DIACHI_DAILY.Name = "DIACHI_DAILY";
+            this.DIACHI_DAILY.Width = 125;
+            // 
+            // EMAIL_DAILY
+            // 
+            this.EMAIL_DAILY.DataPropertyName = "EMAIL_DAILY";
+            this.EMAIL_DAILY.HeaderText = "Email";
+            this.EMAIL_DAILY.MinimumWidth = 6;
+            this.EMAIL_DAILY.Name = "EMAIL_DAILY";
+            this.EMAIL_DAILY.Width = 125;
+            // 
+            // PHONE_DAILY
+            // 
+            this.PHONE_DAILY.DataPropertyName = "PHONE_DAILY";
+            this.PHONE_DAILY.HeaderText = "Số Điện Thoại";
+            this.PHONE_DAILY.MinimumWidth = 6;
+            this.PHONE_DAILY.Name = "PHONE_DAILY";
+            this.PHONE_DAILY.Width = 125;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -259,99 +299,59 @@ namespace FinalProject_quanlykho
             // 
             // TENSANPHAM
             // 
+            this.TENSANPHAM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TENSANPHAM.DataPropertyName = "TENSANPHAM";
             this.TENSANPHAM.HeaderText = "Tên Sản Phẩm";
             this.TENSANPHAM.MinimumWidth = 6;
             this.TENSANPHAM.Name = "TENSANPHAM";
-            this.TENSANPHAM.Width = 125;
             // 
             // STATUSPAYMENT
             // 
+            this.STATUSPAYMENT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.STATUSPAYMENT.DataPropertyName = "STATUSPAYMENT";
             this.STATUSPAYMENT.HeaderText = "Tình Trạng Thanh Toán";
             this.STATUSPAYMENT.MinimumWidth = 6;
             this.STATUSPAYMENT.Name = "STATUSPAYMENT";
-            this.STATUSPAYMENT.Width = 125;
             // 
             // PAYMENT
             // 
+            this.PAYMENT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PAYMENT.DataPropertyName = "PAYMENT";
             this.PAYMENT.HeaderText = "Phương Thức Thanh Toán";
             this.PAYMENT.MinimumWidth = 6;
             this.PAYMENT.Name = "PAYMENT";
-            this.PAYMENT.Width = 125;
             // 
             // DELIVERYSTATUS
             // 
+            this.DELIVERYSTATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DELIVERYSTATUS.DataPropertyName = "DELIVERYSTATUS";
             this.DELIVERYSTATUS.HeaderText = "Tình Trạng Vận Chuyển";
             this.DELIVERYSTATUS.MinimumWidth = 6;
             this.DELIVERYSTATUS.Name = "DELIVERYSTATUS";
-            this.DELIVERYSTATUS.Width = 125;
             // 
             // GIABAN
             // 
+            this.GIABAN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.GIABAN.DataPropertyName = "GIABAN";
             this.GIABAN.HeaderText = "Đơn giá";
             this.GIABAN.MinimumWidth = 6;
             this.GIABAN.Name = "GIABAN";
-            this.GIABAN.Width = 125;
             // 
             // SOLUONG
             // 
+            this.SOLUONG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SOLUONG.DataPropertyName = "Count";
             this.SOLUONG.HeaderText = "Số Lượng";
             this.SOLUONG.MinimumWidth = 6;
             this.SOLUONG.Name = "SOLUONG";
-            this.SOLUONG.Width = 125;
             // 
             // TotalPrice
             // 
+            this.TotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TotalPrice.DataPropertyName = "TotalPrice";
             this.TotalPrice.HeaderText = "Thành Tiền";
             this.TotalPrice.MinimumWidth = 6;
             this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.Width = 125;
-            // 
-            // ID_DAILY
-            // 
-            this.ID_DAILY.DataPropertyName = "ID_DAILY";
-            this.ID_DAILY.HeaderText = "Mã Đại Lý";
-            this.ID_DAILY.MinimumWidth = 6;
-            this.ID_DAILY.Name = "ID_DAILY";
-            this.ID_DAILY.Width = 125;
-            // 
-            // TENDAILY
-            // 
-            this.TENDAILY.DataPropertyName = "TENDAILY";
-            this.TENDAILY.HeaderText = "Tên Đại Lý";
-            this.TENDAILY.MinimumWidth = 6;
-            this.TENDAILY.Name = "TENDAILY";
-            this.TENDAILY.Width = 125;
-            // 
-            // DIACHI_DAILY
-            // 
-            this.DIACHI_DAILY.DataPropertyName = "DIACHI_DAILY";
-            this.DIACHI_DAILY.HeaderText = "Địa Chỉ";
-            this.DIACHI_DAILY.MinimumWidth = 6;
-            this.DIACHI_DAILY.Name = "DIACHI_DAILY";
-            this.DIACHI_DAILY.Width = 125;
-            // 
-            // EMAIL_DAILY
-            // 
-            this.EMAIL_DAILY.DataPropertyName = "EMAIL_DAILY";
-            this.EMAIL_DAILY.HeaderText = "Email";
-            this.EMAIL_DAILY.MinimumWidth = 6;
-            this.EMAIL_DAILY.Name = "EMAIL_DAILY";
-            this.EMAIL_DAILY.Width = 125;
-            // 
-            // PHONE_DAILY
-            // 
-            this.PHONE_DAILY.DataPropertyName = "PHONE_DAILY";
-            this.PHONE_DAILY.HeaderText = "Số Điện Thoại";
-            this.PHONE_DAILY.MinimumWidth = 6;
-            this.PHONE_DAILY.Name = "PHONE_DAILY";
-            this.PHONE_DAILY.Width = 125;
             // 
             // frmPhieuXuat
             // 
@@ -397,6 +397,11 @@ namespace FinalProject_quanlykho
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_DAILY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENDAILY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI_DAILY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL_DAILY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PHONE_DAILY;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENSANPHAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn STATUSPAYMENT;
         private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENT;
@@ -404,10 +409,5 @@ namespace FinalProject_quanlykho
         private System.Windows.Forms.DataGridViewTextBoxColumn GIABAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_DAILY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENDAILY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI_DAILY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL_DAILY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PHONE_DAILY;
     }
 }
