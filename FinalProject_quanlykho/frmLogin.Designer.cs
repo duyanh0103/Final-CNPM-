@@ -81,6 +81,7 @@ namespace FinalProject_quanlykho
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Enter += new System.EventHandler(this.btnLogin_Click);
             // 
             // panel3
             // 
@@ -97,6 +98,7 @@ namespace FinalProject_quanlykho
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(370, 22);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "abc123";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label3
@@ -125,6 +127,7 @@ namespace FinalProject_quanlykho
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(369, 22);
             this.txtUserId.TabIndex = 1;
+            this.txtUserId.Text = "duyanh01";
             // 
             // label1
             // 

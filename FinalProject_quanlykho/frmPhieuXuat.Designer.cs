@@ -54,6 +54,11 @@ namespace FinalProject_quanlykho
             this.GIABAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENDAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHONE_DAILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceipt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgents)).BeginInit();
@@ -61,6 +66,7 @@ namespace FinalProject_quanlykho
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.NavajoWhite;
             this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtContact);
@@ -160,6 +166,7 @@ namespace FinalProject_quanlykho
             // 
             // dgvReceipt
             // 
+            this.dgvReceipt.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReceipt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TENSANPHAM,
@@ -189,7 +196,14 @@ namespace FinalProject_quanlykho
             // 
             // dgvAgents
             // 
+            this.dgvAgents.BackgroundColor = System.Drawing.Color.LemonChiffon;
             this.dgvAgents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAgents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_DAILY,
+            this.TENDAILY,
+            this.DIACHI_DAILY,
+            this.EMAIL_DAILY,
+            this.PHONE_DAILY});
             this.dgvAgents.Location = new System.Drawing.Point(12, 91);
             this.dgvAgents.Name = "dgvAgents";
             this.dgvAgents.RowHeadersWidth = 51;
@@ -222,12 +236,12 @@ namespace FinalProject_quanlykho
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.ForeColor = System.Drawing.Color.Red;
-            this.txtTongTien.Location = new System.Drawing.Point(826, 386);
+            this.txtTongTien.Location = new System.Drawing.Point(826, 384);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
-            this.txtTongTien.Size = new System.Drawing.Size(102, 22);
+            this.txtTongTien.Size = new System.Drawing.Size(195, 27);
             this.txtTongTien.TabIndex = 35;
             this.txtTongTien.Text = "0";
             this.txtTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -235,11 +249,13 @@ namespace FinalProject_quanlykho
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(747, 389);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label11.Location = new System.Drawing.Point(722, 386);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 17);
+            this.label11.Size = new System.Drawing.Size(98, 20);
             this.label11.TabIndex = 36;
-            this.label11.Text = "Tổng Tiền";
+            this.label11.Text = "Tổng Tiền:";
             // 
             // TENSANPHAM
             // 
@@ -297,10 +313,51 @@ namespace FinalProject_quanlykho
             this.TotalPrice.Name = "TotalPrice";
             this.TotalPrice.Width = 125;
             // 
+            // ID_DAILY
+            // 
+            this.ID_DAILY.DataPropertyName = "ID_DAILY";
+            this.ID_DAILY.HeaderText = "Mã Đại Lý";
+            this.ID_DAILY.MinimumWidth = 6;
+            this.ID_DAILY.Name = "ID_DAILY";
+            this.ID_DAILY.Width = 125;
+            // 
+            // TENDAILY
+            // 
+            this.TENDAILY.DataPropertyName = "TENDAILY";
+            this.TENDAILY.HeaderText = "Tên Đại Lý";
+            this.TENDAILY.MinimumWidth = 6;
+            this.TENDAILY.Name = "TENDAILY";
+            this.TENDAILY.Width = 125;
+            // 
+            // DIACHI_DAILY
+            // 
+            this.DIACHI_DAILY.DataPropertyName = "DIACHI_DAILY";
+            this.DIACHI_DAILY.HeaderText = "Địa Chỉ";
+            this.DIACHI_DAILY.MinimumWidth = 6;
+            this.DIACHI_DAILY.Name = "DIACHI_DAILY";
+            this.DIACHI_DAILY.Width = 125;
+            // 
+            // EMAIL_DAILY
+            // 
+            this.EMAIL_DAILY.DataPropertyName = "EMAIL_DAILY";
+            this.EMAIL_DAILY.HeaderText = "Email";
+            this.EMAIL_DAILY.MinimumWidth = 6;
+            this.EMAIL_DAILY.Name = "EMAIL_DAILY";
+            this.EMAIL_DAILY.Width = 125;
+            // 
+            // PHONE_DAILY
+            // 
+            this.PHONE_DAILY.DataPropertyName = "PHONE_DAILY";
+            this.PHONE_DAILY.HeaderText = "Số Điện Thoại";
+            this.PHONE_DAILY.MinimumWidth = 6;
+            this.PHONE_DAILY.Name = "PHONE_DAILY";
+            this.PHONE_DAILY.Width = 125;
+            // 
             // frmPhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1190, 719);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.label11);
@@ -311,7 +368,7 @@ namespace FinalProject_quanlykho
             this.Controls.Add(this.dgvReceipt);
             this.Controls.Add(this.label1);
             this.Name = "frmPhieuXuat";
-            this.Text = "frmPhieuXuat";
+            this.Text = "Phiếu Xuất ";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceipt)).EndInit();
@@ -347,5 +404,10 @@ namespace FinalProject_quanlykho
         private System.Windows.Forms.DataGridViewTextBoxColumn GIABAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_DAILY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENDAILY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI_DAILY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL_DAILY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PHONE_DAILY;
     }
 }
