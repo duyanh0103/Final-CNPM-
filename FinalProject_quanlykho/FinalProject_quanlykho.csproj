@@ -46,6 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AgentsDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\MenuDAO.cs" />
+    <Compile Include="DAO\OutputInfoDAO.cs" />
+    <Compile Include="DAO\OutputKhoDAO.cs" />
+    <Compile Include="DTO\Agents.cs" />
+    <Compile Include="DTO\Menu.cs" />
+    <Compile Include="DTO\OutputInfo.cs" />
+    <Compile Include="DTO\OutputKho.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,5 +150,6 @@
   <ItemGroup>
     <None Include="Resources\Logo_tree-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
