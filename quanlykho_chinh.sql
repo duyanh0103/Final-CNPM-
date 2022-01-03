@@ -113,7 +113,7 @@ DROP TABLE OUTPUTINFO
 --insert account
 INSERT INTO ACCOUNT VALUES ('duyanh01',N'Võ Nguyễn Duy Anh','abc123','duyanh41511@gmail.com');
 INSERT INTO ACCOUNT VALUES ('kimlam',N'Thanh Nguyễn Kim Lâm','ab123','kl123@gmail.com')
-INSERT INTO ACCOUNT VALUES ('shishiba',N'Lê Ngọc Thanh Thủy','abc1234','tt123@gmail.com')
+INSERT INTO ACCOUNT VALUES ('shishiba',N'Lê Ngọc Thanh Thủy','abc1234','tt123@gmail.com') 
 INSERT INTO ACCOUNT VALUES ('thalz',N'Lê Thanh','12345','thanhthanh123@gmail.com')
 
 select * 
@@ -203,7 +203,6 @@ select * from outputinfo where ID_OUTPUT = 2
 
 select p.TENSANPHAM, OI.SOLUONG, P.GIABAN, ok.STATUSPAYMENT,ok.PAYMENT, ok.DELIVERYSTATUS,P.GIABAN * OI.SOLUONG AS N'ĐƠN GIÁ' from outputinfo oi, outputkho ok, product p
 where oi.ID_OUTPUT = ok.ID_OUTPUT AND oi.IDSANPHAM = p.IDSANPHAM AND OK.ID_DAILY = 1
-
 
 
 
