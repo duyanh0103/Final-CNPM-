@@ -17,9 +17,12 @@ create table PRODUCT
 (
 	IDSANPHAM VARCHAR(10) PRIMARY KEY,
 	TENSANPHAM NVARCHAR(200),
-	ID_UNIT INT not null FOREIGN KEY REFERENCES UNIT(ID_UNIT),
-	ID_SUPPLIER VARCHAR(10) not null FOREIGN KEY REFERENCES SUPPLIER(ID_SUPPLIER),
+	UNIT nvarchar(20)not null,
+	--ID_SUPPLIER VARCHAR(10) not null FOREIGN KEY REFERENCES SUPPLIER(ID_SUPPLIER),
+	SOLUONG int,
 	ID_LOAISP INT NOT NULL FOREIGN KEY REFERENCES PRODUCTTYPE(ID_LOAISP),
+	GIANHAP float,
+	GIABAN float
 )
 GO
 DROP TABLE PRODUCT
@@ -88,25 +91,24 @@ DROP TABLE INPUTINFO
 CREATE TABLE OUTPUTKHO
 (
 	ID_OUTPUT INT IDENTITY PRIMARY KEY,
-	DATE_OUTPUT VARCHAR(25) DEFAULT FORMAT(GETDATE(),'DD/MM/YYYY HH:mm:ss' ) 
+	ID_DAILY INT not null FOREIGN KEY REFERENCES DAILY(ID_DAILY), --lay ten dai ly
+	STATUSPAYMENT INT DEFAULT 0,--0 LÀ CHuA TRa 1 LÀ tra roi
+	PAYMENT NVARCHAR(MAX) DEFAULT 'CASH',
+	DELIVERYSTATUS NVARCHAR(MAX) DEFAULT 'Waiting',
+	DATE_OUTPUT datetime
 )
 GO
-
+DROP TABLE OUTPUTKHO
 --OUTPUTINFOR
 CREATE TABLE OUTPUTINFO
 (
 	ID_OUTPUTINFO INT IDENTITY PRIMARY KEY,
 	IDSANPHAM VARCHAR(10) not null FOREIGN KEY REFERENCES PRODUCT(IDSANPHAM),
-	ID_OUTPUT INT  not null FOREIGN KEY REFERENCES OUTPUTKHO(ID_OUTPUT),--xuat khi nao
-	ID_INPUTINFO INT  not null FOREIGN KEY REFERENCES INPUTINFO(ID_INPUTINFO), --QUAN LI XEM HANG NAY DC NHAP LAN NAO, lay gia bán
-	ID_DAILY INT not null FOREIGN KEY REFERENCES DAILY(ID_DAILY), //lay ten dai ly
-	ID_USER INT FOREIGN KEY REFERENCES ACCOUNT(ID_USER),
-	PAYMENT NVARCHAR(MAX) DEFAULT 'CASH',
-	STATUSPAYMENT INT DEFAULT 0,--0 LÀ CHuA TRa 1 LÀ tra roi
-	SOLUONG INT
+	ID_OUTPUT INT  not null FOREIGN KEY REFERENCES OUTPUTKHO(ID_OUTPUT),
+	SOLUONG INT not null default 0
 )
 GO
-
+DROP TABLE OUTPUTINFO
 
 --insert account
 INSERT INTO ACCOUNT VALUES ('duyanh01',N'Võ Nguyễn Duy Anh','abc123','duyanh41511@gmail.com');
@@ -152,10 +154,10 @@ from PRODUCTTYPE
 
 --PRODUCT
 
-INSERT INTO PRODUCT VALUES ('TPBVSK LHD',N'TPBVSK LIỄU HOÀN ĐAN',1,'BTD',4)
-INSERT INTO PRODUCT VALUES ('TPBVSK BAK',N'TPBVSK BẢO AN KHỚP',1,'BTD',3)
-INSERT INTO PRODUCT VALUES ('TTC',N'Doctor Plus',1,'HT',1)
-INSERT INTO PRODUCT VALUES ('CACI',N'Calcium Corbiere',2,'BTD',1)
+INSERT INTO PRODUCT VALUES ('TPBVSK LHD',N'TPBVSK LIỄU HOÀN ĐAN',N'viên',120,4,120000,150000)
+INSERT INTO PRODUCT VALUES ('TPBVSK BAK',N'TPBVSK BẢO AN KHỚP',N'viên',120,3,123000,140000)
+INSERT INTO PRODUCT VALUES ('TTC',N'Doctor Plus',N'viên',120,1,50000,60000)
+INSERT INTO PRODUCT VALUES ('CACI',N'Calcium Corbiere',N'ống',120,1,80000,90000)
 select * 
 from PRODUCT
 
@@ -168,7 +170,7 @@ from INPUTKHO
 delete inputkho
 
 
--- inputkho
+-- inputinfo
 INSERT INTO INPUTINFO VALUES ('TPBVSK LHD',N'TPBVSK LIỄU HOÀN ĐAN',1,10,GETDATE(),1200000,1500000)
 INSERT INTO INPUTINFO VALUES ('TPBVSK LHD',N'TPBVSK BẢO AN KHỚP',1,10,GETDATE(),140000,160000)
 INSERT INTO INPUTINFO VALUES ('TTC LHD',N'Doctor Plus',1,10,GETDATE(),1234000,150000)
@@ -178,3 +180,59 @@ INSERT INTO INPUTINFO VALUES ('CACI',N'Calcium Corbiere',2,10,'2021-12-21',20000
 select * 
 from INPUTINFO
 delete INPUTINFO
+
+--outputkho			ID_DAILY,STATUSPAYMENT,PAYMENT,DELIVERY,DATE_OUTPUT
+insert into OUTPUTKHO values(1,0,N'Banking: ACB',N'waiting',GETDATE())--1
+insert into OUTPUTKHO values(1,1,N'cash',N'In transit',GETDATE())	  --2
+insert into OUTPUTKHO values(2,1,N'Banking: Citibank',N'In transit',GETDATE()) --3
+insert into OUTPUTKHO values(4,1,N'Banking: VietcomBank',N'Delivered','2021-10-1')--4
+insert into OUTPUTKHO values(3,0,N'Banking: ACB',N'waiting','2022-01-02') --5
+select * from OUTPUTKHO
+select * from outputkho where  statuspayment = 0
+
+--outputinfo					idsanpham,id_output,soluong	
+insert into OUTPUTINFO values('CACI',1,14)
+insert into OUTPUTINFO values('CACI',2,12)
+insert into OUTPUTINFO values('CACI',3,10)
+insert into OUTPUTINFO values('CACI',4,20)
+insert into OUTPUTINFO values('CACI',1,14)
+insert into OUTPUTINFO values('TPBVSK LHD',5,14)
+select * from OUTPUTINFO
+select * from outputinfo where ID_OUTPUT = 2
+
+
+select p.TENSANPHAM, OI.SOLUONG, P.GIABAN, ok.STATUSPAYMENT,ok.PAYMENT, ok.DELIVERYSTATUS,P.GIABAN * OI.SOLUONG AS N'ĐƠN GIÁ' from outputinfo oi, outputkho ok, product p
+where oi.ID_OUTPUT = ok.ID_OUTPUT AND oi.IDSANPHAM = p.IDSANPHAM AND OK.ID_DAILY = 1
+
+
+
+
+
+
+--tạo proc
+--sản phẩm
+create proc productProc_getProductByDisplayName
+@tensanpham nvarchar(200)
+as
+begin
+	select * from dbo.product where tensanpham = @tensanpham
+end
+go
+
+exec dbo.productProc_getProductByDisplayName @tensanpham = N'Doctor Plus'
+
+create proc productProc_getProductByDisplayName
+@tensanpham nvarchar(200)
+as
+begin
+	select * from dbo.product where tensanpham = @tensanpham
+end
+go
+
+
+--đại lý
+create proc dailyProc_getAgentsList
+as select * from DAILY
+go
+
+exec dbo.dailyProc_getAgentsList
