@@ -148,7 +148,6 @@ namespace FinalProject_quanlykho
             this.cbCacLoaiSP.Name = "cbCacLoaiSP";
             this.cbCacLoaiSP.Size = new System.Drawing.Size(141, 24);
             this.cbCacLoaiSP.TabIndex = 13;
-
             // 
             // btnUpdate
             // 
@@ -383,16 +382,17 @@ namespace FinalProject_quanlykho
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.IndianRed;
-            this.label1.Location = new System.Drawing.Point(409, 21);
+            this.label1.Location = new System.Drawing.Point(484, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(480, 60);
+            this.label1.Size = new System.Drawing.Size(307, 60);
             this.label1.TabIndex = 14;
-            this.label1.Text = "GOODS RECEIVED";
+            this.label1.Text = "PRODUCTS";
             // 
             // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1279, 450);
             this.Controls.Add(this.dgvProductInfo);
             this.Controls.Add(this.groupBox2);
@@ -400,7 +400,6 @@ namespace FinalProject_quanlykho
             this.Controls.Add(this.label1);
             this.Name = "frmSanPham";
             this.Text = "frmSanPham";
-
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductInfo)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
