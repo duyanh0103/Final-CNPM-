@@ -53,6 +53,7 @@ namespace FinalProject_quanlykho
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.TENSANPHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE_OUTPUT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STATUSPAYMENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PAYMENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DELIVERYSTATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -170,6 +171,7 @@ namespace FinalProject_quanlykho
             this.dgvReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReceipt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TENSANPHAM,
+            this.DATE_OUTPUT,
             this.STATUSPAYMENT,
             this.PAYMENT,
             this.DELIVERYSTATUS,
@@ -305,6 +307,14 @@ namespace FinalProject_quanlykho
             this.TENSANPHAM.MinimumWidth = 6;
             this.TENSANPHAM.Name = "TENSANPHAM";
             // 
+            // DATE_OUTPUT
+            // 
+            this.DATE_OUTPUT.DataPropertyName = "DATE_OUTPUT";
+            this.DATE_OUTPUT.HeaderText = "Ngày xuất";
+            this.DATE_OUTPUT.MinimumWidth = 6;
+            this.DATE_OUTPUT.Name = "DATE_OUTPUT";
+            this.DATE_OUTPUT.Width = 125;
+            // 
             // STATUSPAYMENT
             // 
             this.STATUSPAYMENT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -403,6 +413,7 @@ namespace FinalProject_quanlykho
         private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL_DAILY;
         private System.Windows.Forms.DataGridViewTextBoxColumn PHONE_DAILY;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENSANPHAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATE_OUTPUT;
         private System.Windows.Forms.DataGridViewTextBoxColumn STATUSPAYMENT;
         private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERYSTATUS;

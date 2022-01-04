@@ -24,7 +24,7 @@ namespace FinalProject_quanlykho.DAO
         public List<Menu> GetListMenuByAgent(int id)
         {
             List<Menu> listMenu = new List<Menu>();
-            string query = "select p.TENSANPHAM, OI.SOLUONG, P.GIABAN, ok.STATUSPAYMENT,ok.PAYMENT, ok.DELIVERYSTATUS,P.GIABAN * OI.SOLUONG AS N'ĐƠN GIÁ' from outputinfo oi, outputkho ok, product p where oi.ID_OUTPUT = ok.ID_OUTPUT AND oi.IDSANPHAM = p.IDSANPHAM AND OK.ID_DAILY = " + id;
+            string query = "select p.TENSANPHAM, OI.SOLUONG, P.GIABAN, ok.STATUSPAYMENT,ok.PAYMENT, ok.DELIVERYSTATUS, ok.DATE_OUTPUT ,  P.GIABAN * OI.SOLUONG AS N'ĐƠN GIÁ' from outputinfo oi, outputkho ok, product p where oi.ID_OUTPUT = ok.ID_OUTPUT AND oi.IDSANPHAM = p.IDSANPHAM AND OK.ID_DAILY = " + id;
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {

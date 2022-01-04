@@ -11,7 +11,7 @@ namespace FinalProject_quanlykho.DTO
     {
 
 
-        public Menu(string tensanpham, int count, float giaban, int statuspayment, string payment, string deliverystatus , float totalPrice)
+        public Menu(string tensanpham, int count, float giaban, int statuspayment, string payment, string deliverystatus , float totalPrice, DateTime date_output)
         {
             this.TENSANPHAM = tensanpham;
             this.Count = count;
@@ -20,6 +20,7 @@ namespace FinalProject_quanlykho.DTO
             this.STATUSPAYMENT = statuspayment;
             this.PAYMENT = payment;
             this.DELIVERYSTATUS = deliverystatus;
+            this.DATE_OUTPUT = date_output;
         }
         //đặt propertyname theo this.'...' trong ''
         public Menu(DataRow row)
@@ -31,8 +32,12 @@ namespace FinalProject_quanlykho.DTO
             this.PAYMENT = row["PAYMENT"].ToString();
             this.DELIVERYSTATUS = row["DELIVERYSTATUS"].ToString();
             this.TotalPrice = (float)Convert.ToDouble(row["ĐƠN GIÁ"].ToString()); //cái này là thành tiền 
+            this.DATE_OUTPUT = (DateTime)row["DATE_OUTPUT"];
 
         }
+
+        private DateTime dATE_OUTPUT;
+        public DateTime DATE_OUTPUT { get => dATE_OUTPUT; set => dATE_OUTPUT = value; }
 
         private string dELIVERYSTATUS;
         public string DELIVERYSTATUS { get => dELIVERYSTATUS; set => dELIVERYSTATUS = value; }
