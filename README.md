@@ -18,7 +18,7 @@
 
 4. Goods Delivery Note:
 
-![markdown](https://user-images.githubusercontent.com/90690747/147925409-30dbad43-d96e-4960-89a9-b03d6bd6bc52.png)
+![markdown](https://user-images.githubusercontent.com/90690747/148153550-0743321b-8d27-4526-8cad-5d1cce192c90.png)
 
 5. Products:
 
