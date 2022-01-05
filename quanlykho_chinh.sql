@@ -208,7 +208,7 @@ select * from OUTPUTINFO
 select * from outputinfo where ID_OUTPUT = 2
 
 
-select p.TENSANPHAM, OI.SOLUONG, P.GIABAN, ok.STATUSPAYMENT,ok.PAYMENT, ok.DELIVERYSTATUS,P.GIABAN * OI.SOLUONG AS N'ĐƠN GIÁ' from outputinfo oi, outputkho ok, product p
+select p.TENSANPHAM, OI.SOLUONG, P.GIABAN, ok.STATUSPAYMENT,ok.PAYMENT, ok.DELIVERYSTATUS, ok.DATE_OUTPUT ,P.GIABAN * OI.SOLUONG AS N'ĐƠN GIÁ' from outputinfo oi, outputkho ok, product p
 where oi.ID_OUTPUT = ok.ID_OUTPUT AND oi.IDSANPHAM = p.IDSANPHAM AND OK.ID_DAILY = 1
 
 
